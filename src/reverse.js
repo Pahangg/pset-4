@@ -1,26 +1,25 @@
 const readlineSync = require("readline-sync");
 
-let value = 0;
+let integer = 0;
+let space = "";
 
-console.log();
+console.log("");
+
 do {
-     value = Number(readlineSync.question("Positive integer: "));
-} while (value < Number.MIN_SAFE_INTEGER ||
-         value > Number.MAX_SAFE_INTEGER ||
-         Number.isNaN(value) ||
-         !Number.isInteger(value));
+      integer = Number(readlineSync.question("Positive integer: "));
+} while (integer < 1 || integer > Number.MAX_SAFE_INTEGER || Number.isNaN(integer) || !Number.isInteger(integer));
 
-let digits = "";
-while (value > 0) {
-  const digit = value % 10;
-  value = Math.floor(value / 10);
+while (integer > 0) {
 
-  if(value > 0){
-    digits = digits + digit + ", ";
-  }else{
-    digits = digits + digit + ".";
+  let value = (integer % 10)
+  integer = Math.floor(integer / 10)
+
+  if (integer > 0) {
+    space = space + value + ", " ;
+  } else {
+    space = space + value ;
   }
 
 }
 
-console.log(digits);
+console.log("\n" + space + ".\n");

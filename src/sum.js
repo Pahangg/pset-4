@@ -16,16 +16,7 @@ do {
          Number.isNaN(upperBound) ||
          !Number.isInteger(lowerBound) ||
          !Number.isInteger(upperBound));
-
-
-// while (lowerBound <= upperBound) {
-//   if (lowerBound % 2 === 0) {
-//     sum = sum + lowerBound;
-//   }
-//
-//   lowerBound++;
-// }
-
+         
 for (let x = lowerBound; x <= upperBound; x++) {
   if (x % 2 === 0) {
     sum = sum + x;
